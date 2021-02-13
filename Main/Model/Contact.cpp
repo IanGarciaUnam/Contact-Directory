@@ -6,6 +6,9 @@
 */
 #include <bits/stdc++.h>
 #include "Contact.h"
+#include <string.h>
+#include <cstring>
+#include <boost/algorithm/string.hpp>
 using namespace Contacto;
 
   Contact::Contact(std::string nombre, int phone_number){
@@ -27,4 +30,9 @@ using namespace Contacto;
 
   int Contact::getNumber(){
     return Contact::phoneNumber;
+  }
+  string Contact::getCard(){
+    string card="Nombre Completo:\t" + boost::to_upper_copy(Contact::name)+ "\nTélefono:\t"+std::to_string(Contact::phoneNumber);
+    string separator="\n======================================\n\n";
+  return card+separator;
   }

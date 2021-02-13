@@ -20,6 +20,7 @@ namespace Contacto
       void setName(string nom);
       string getName();
       int getNumber();
+      string getCard();
     };
 
 }
