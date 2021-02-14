@@ -10,8 +10,8 @@
 #include <cstring>
 #include <boost/algorithm/string.hpp>
 using namespace Contacto;
-
-  Contact::Contact(std::string nombre, int phone_number){
+using namespace std;
+  Contact::Contact(string nombre, int phone_number){
     Contact::phoneNumber=phone_number;
     Contact::name=nombre;
   }

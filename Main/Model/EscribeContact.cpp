@@ -6,20 +6,20 @@
 */
 #include "EscribeContact.h"
 #include <list>
-//#include <ofstream>
-//#include <ifstream>
+#include <filesystem>
 #include <fstream>
-
-usign namespace Escribano;
-usign std::filesystem::exists
+#include <iostream>
+#include <cstdint>
+using namespace Escribano;
+//using std::filesystem::exists;
 
   EscribeContact::EscribeContact(string file){
     EscribeContact::fileName=file;
-    EscribeContact::contacts=c;
   }
 
-  void readBeforeAssign(){
-    if(!exists(EscribeContact::fileName)){
+  void EscribeContact::readBeforeAssign(){
+    ifstream ifile((EscribeContact::fileName));
+    if(!ifile){
       std::cout<<" No file, verify it!"<<endl;
       ofstream file;
       file.open(EscribeContact::fileName);
@@ -31,7 +31,7 @@ usign std::filesystem::exists
     while(!fileLecture.eof()){
       fileLecture>>beforeAssigned;
     }
-    fileLecture.close()
+    fileLecture.close();
     EscribeContact::beforeAssigned=bA;
   }
 
@@ -39,10 +39,10 @@ usign std::filesystem::exists
   *Rewrite file and add new contacts
   *
   */
-  void addContacts(list<Contact> c){
+  void EscribeContact::addContacts(list<std::string> c){
     std::string last_block="";
-    for(Contact my_contact: c){
-      last_block+=my_contact.getCard();
+    for(string my_contact: c){
+      last_block+=my_contact;
     }
     EscribeContact::beforeAssigned+=last_block;
     ofstream file;

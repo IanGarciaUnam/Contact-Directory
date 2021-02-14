@@ -5,23 +5,26 @@
 @version 1.0.0
 */
 #include <list>
-#include "Contact.cpp"
 namespace Escribano{
-  usign namespace std;
   class EscribeContact{
     private:
-      string fileName;
-      list<Contact> contacts;
+      /*File's name*/
+      std::string fileName;
+      /* String of contacts*/
+      list<std::string> contacts;
+      /*Content of the file*/
       string beforeAssigned;
 
     public:
+      /*Builder*/
       EscribeContact(string file);
+      /*Relocate data of directory.dat*/
       void readBeforeAssign();
-      void addContacts(list<Contact> c);
-      
+      /*Add contacts to the file and close it
+      *@param c string list
+      */
+      void addContacts(list<std::string> c);
 
+
+    };
   }
-
-
-
-}
