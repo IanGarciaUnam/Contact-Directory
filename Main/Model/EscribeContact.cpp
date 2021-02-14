@@ -10,6 +10,7 @@
 #include <fstream>
 #include <iostream>
 #include <cstdint>
+#include <cstdlib>
 using namespace Escribano;
 //using std::filesystem::exists;
 
@@ -25,14 +26,14 @@ using namespace Escribano;
       file.open(EscribeContact::fileName);
       return;
     }
-    std::string bA;
+    std::string linea;
     ifstream fileLecture(EscribeContact::fileName);
-
-    while(!fileLecture.eof()){
-      fileLecture>>beforeAssigned;
+    EscribeContact::beforeAssigned="";
+    while(getline(fileLecture, linea)){
+     EscribeContact::beforeAssigned+=linea+"\n";
     }
     fileLecture.close();
-    EscribeContact::beforeAssigned=bA;
+
   }
 
   /**

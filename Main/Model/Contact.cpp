@@ -11,12 +11,12 @@
 #include <boost/algorithm/string.hpp>
 using namespace Contacto;
 using namespace std;
-  Contact::Contact(string nombre, int phone_number){
+  Contact::Contact(string nombre, long int phone_number){
     Contact::phoneNumber=phone_number;
     Contact::name=nombre;
   }
 
-  void Contact::setNumber(int number){
+  void Contact::setNumber(long int number){
   Contact::phoneNumber=number;
   }
 

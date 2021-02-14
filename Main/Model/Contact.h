@@ -12,11 +12,11 @@ namespace Contacto
     class Contact{
     private:
       string name;
-      int phoneNumber;
+      long int phoneNumber;
 
     public:
-      Contact(string nombre, int numero_tel); // nom, int number);
-      void setNumber(int number);
+      Contact(string nombre, long int numero_tel); // nom, int number);
+      void setNumber(long int number);
       void setName(string nom);
       string getName();
       int getNumber();
